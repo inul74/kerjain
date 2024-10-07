@@ -83,6 +83,7 @@ export const NavItem = ({
                 sizes="(max-width: 768px) 100vw,
                 (max-width: 1200px) 50vw,
                 33vw"
+                priority
               />
             </div>
             <span className="font-medium text-sm">{organization.name}</span>
