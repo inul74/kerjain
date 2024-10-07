@@ -38,6 +38,7 @@ export const MobileSidebar = () => {
   return (
     <>
       <Button
+        type="button"
         onClick={onOpen}
         className="block md:hidden mr-2"
         variant="ghost"
