@@ -66,6 +66,7 @@ export const NavItem = ({
   return (
     <AccordionItem value={organization.id} className="border-none">
       <AccordionTrigger
+        suppressHydrationWarning={true}
         onClick={() => onExpand(organization.id)}
         className={cn(
           "flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline",
