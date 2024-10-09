@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Check, Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
 import { useEffect, useState } from "react";
-import { Check, Loader2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { unsplash } from "@/lib/unsplash";
@@ -21,6 +21,7 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
   const { pending } = useFormStatus();
 
   const [images, setImages] =
+    // eslint-disable-next-line
     useState<Array<Record<string, any>>>(defaultImages);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImageId, setSelectedImageId] = useState(null);
@@ -34,6 +35,7 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
         });
 
         if (result && result.response) {
+          // eslint-disable-next-line
           const newImages = result.response as Array<Record<string, any>>;
           setImages(newImages);
         } else {
@@ -81,7 +83,7 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
               checked={selectedImageId === image.id}
               disabled={pending}
               value={`${image.id}|${image.urls.thumb}|${image.urls.full}|${image.links.html}|${image.user.name}`}
-              onChange={() => {}}
+              readOnly
             />
             <Image
               src={image.urls.thumb}

@@ -32,7 +32,8 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         title,
       },
     });
-  } catch {
+  } catch (error) {
+    console.log(error);
     return {
       error: "Failed to update.",
     };

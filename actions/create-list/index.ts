@@ -50,7 +50,8 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         order: newOrder,
       },
     });
-  } catch {
+  } catch (error) {
+    console.log(error);
     return {
       error: "Failed to create.",
     };

@@ -55,7 +55,6 @@ export const Navbar = () => {
           }}
         />
         <UserButton
-          afterSwitchSessionUrl="/"
           appearance={{
             elements: {
               avatarBox: {
