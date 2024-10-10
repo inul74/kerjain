@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { createSafeAction } from "@/lib/create-safe-action";
 
-import { UpdateBoard } from "./schema";
+import { UpdateCard } from "./schema";
 import { InputType, ReturnType } from "./types";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
@@ -18,17 +18,21 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     };
   }
 
-  const { title, id } = data;
-  let board;
+  const { id, boardId, ...values } = data;
+  let card;
 
   try {
-    board = await db.board.update({
+    card = await db.card.update({
       where: {
         id,
-        orgId,
+        list: {
+          board: {
+            orgId,
+          },
+        },
       },
       data: {
-        title,
+        ...values,
       },
     });
   } catch (error) {
@@ -38,8 +42,8 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     };
   }
 
-  revalidatePath(`/board/${id}`);
-  return { data: board };
+  revalidatePath(`/board/${boardId}`);
+  return { data: card };
 };
 
-export const updateBoard = createSafeAction(UpdateBoard, handler);
+export const updateCard = createSafeAction(UpdateCard, handler);
