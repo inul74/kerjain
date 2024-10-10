@@ -23,7 +23,6 @@ const handler = async (data: InputType): Promise<ReturnType> => {
   let board;
 
   try {
-    // eslint-disable-next-line
     board = await db.board.delete({
       where: {
         id,

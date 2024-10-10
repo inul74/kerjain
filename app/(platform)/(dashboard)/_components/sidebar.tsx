@@ -16,7 +16,6 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({ storageKey = "k-sidebar-state" }: SidebarProps) => {
-  // eslint-disable-next-line
   const [expanded, setExpanded] = useLocalStorage<Record<string, any>>(
     storageKey,
     {}

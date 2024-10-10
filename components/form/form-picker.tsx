@@ -21,7 +21,6 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
   const { pending } = useFormStatus();
 
   const [images, setImages] =
-    // eslint-disable-next-line
     useState<Array<Record<string, any>>>(defaultImages);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImageId, setSelectedImageId] = useState(null);
@@ -35,7 +34,6 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
         });
 
         if (result && result.response) {
-          // eslint-disable-next-line
           const newImages = result.response as Array<Record<string, any>>;
           setImages(newImages);
         } else {
