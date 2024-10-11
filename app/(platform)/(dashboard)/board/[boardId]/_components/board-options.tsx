@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
-import { MoreHorizontal, X } from "lucide-react";
+import { MoreHorizontal, Trash, X } from "lucide-react";
 
 import { useAction } from "@/hooks/use-action";
 import { deleteBoard } from "@/actions/delete-board";
@@ -54,6 +54,7 @@ export const BoardOptions = ({ id }: BoardOptionsProps) => {
           disabled={isLoading}
           className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-red-600 text-sm"
         >
+          <Trash className="h-4 w-4 mr-2" />
           Delete this board
         </Button>
       </PopoverContent>
