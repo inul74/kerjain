@@ -49,11 +49,11 @@ export const BoardList = async () => {
             className="aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition"
           >
             <p className="text-sm">Create new board</p>
-            <span className="text-xs">5 remaining</span>
+            <span className="text-xs">Unlimited</span>
             <Hint
               sideOffset={40}
               description={`
-              Free workspaces can have up to 5 open boards. For unlimited boards, upgrade this workspace.
+              Free workspaces can have unlimited open boards. This is a free plan forever.
               `}
             >
               <HelpCircle className="absolute bottom-2 right-2 h-[14px] w-[14px]" />
