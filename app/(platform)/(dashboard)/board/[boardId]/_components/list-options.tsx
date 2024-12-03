@@ -68,18 +68,11 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
           <MoreHorizontal className="h-4 w-4" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="px-0 pt-3 pb-1" side="bottom" align="start">
+      <PopoverContent className="px-0 pt-3 pb-1" side="bottom" align="end">
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
           List actions
         </div>
-        <PopoverClose ref={closeRef} asChild>
-          <Button
-            className="h-auto w-auto py-2 absolute top-2 right-2 text-neutral-600"
-            variant="ghost"
-          >
-            <X className="h-4 w-4" />
-          </Button>
-        </PopoverClose>
+
         <Button
           onClick={onAddCard}
           className="rounded-none w-full h-auto py-2 px-5 justify-start font-normal text-sm"
@@ -89,7 +82,13 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
         </Button>
         <form action={onCopy}>
           <input hidden readOnly name="id" id="id" value={data.id} />
-          <input hidden readOnly name="boardId" id="boardId" value={data.boardId} />
+          <input
+            hidden
+            readOnly
+            name="boardId"
+            id="boardId"
+            value={data.boardId}
+          />
           <FormSubmit
             variant="ghost"
             className="rounded-none w-full h-auto py-2 px-5 justify-start font-normal text-sm"
@@ -100,7 +99,13 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
         <Separator />
         <form action={onDelete}>
           <input hidden readOnly name="id" id="id" value={data.id} />
-          <input hidden readOnly name="boardId" id="boardId" value={data.boardId} />
+          <input
+            hidden
+            readOnly
+            name="boardId"
+            id="boardId"
+            value={data.boardId}
+          />
           <FormSubmit
             variant="ghost"
             className="rounded-none w-full h-auto px-5 py-2 justify-start font-normal text-sm text-red-600"
@@ -108,7 +113,15 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
             Delete this list
           </FormSubmit>
         </form>
+        <PopoverClose ref={closeRef} asChild>
+          <Button
+            className="h-auto w-auto py-2 absolute top-2 right-2 text-neutral-600"
+            variant="ghost"
+          >
+            <X className="h-4 w-4" />
+          </Button>
+        </PopoverClose>
       </PopoverContent>
     </Popover>
-  )
-}
+  );
+};

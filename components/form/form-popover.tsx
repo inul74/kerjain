@@ -58,10 +58,10 @@ export const FormPopover = ({
     <Popover>
       <PopoverTrigger asChild>{children}</PopoverTrigger>
       <PopoverContent
-        align={align}
         className="w-80 pt-3"
-        side={side}
-        sideOffset={sideOffset}
+        side="right"
+        align="end"
+        sideOffset={-100}
       >
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
           Create board
